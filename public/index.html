@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="bg-gray-300">
+    <div class="flex">
+        <!--Side Nav-->
+        <div class="bg-indigo-900 w-64 h-screen"> 
+            <div class="flex pl-8 py-6 bg-indigo-800">
+                <h2 class="text-gray-200 uppercase font-bold text-xl">Super CORP</h2>
+            </div>
+            <div>
+                <p class="pl-8 pt-5 text-gray-200 uppercase text-xs font-bold"> Pages </p>
+            </div>
+            <div class="mt-5">
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/dashboard.png" />
+                    <h4 class="text-md font-bold text-gray-200">Dashboard</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/customers.png" />
+                    <h4 class="text-md font-bold text-gray-200">Customers</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/orders.png" />
+                    <h4 class="text-md font-bold text-gray-200">Orders</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/campaign.png" />
+                    <h4 class="text-md font-bold text-gray-200">Campaigns</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/messages.png" />
+                    <h4 class="text-md font-bold text-gray-200">Messages</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/apps.png" />
+                    <h4 class="text-md font-bold text-gray-200">Apps</h4>
+                </div>
+                <div class="flex space-x-1 pl-8 pt-2 pb-2 items-center hover:bg-indigo-800"> 
+                    <img class="w-5 h-5" src="./assets/images/settings.png" />
+                    <h4 class="text-md font-bold text-gray-200">Settings</h4>
+                </div>
+            </div>
+        </div>
+        <!--Side Nav-->
+        
+        <!--Main area-->
+        <div class="flex-1 h-screen overflow-auto">
+            <!--Top Navbar-->
+            <div class="flex bg-white sticky top-0">
+                <div class="flex flex-row items-center px-5 pt-5 pb-4">
+                    <img class="w-10 h-10" src="./assets/images/person.png" />
+                    <h4 class="mx-2 font-semibold">Ittahad Uz Zaman</h4>
+                </div>
+                <div class="flex flex-auto flex-row justify-end items-center gap-5 px-5 pt-5 pb-4">
+                    <img class="w-6 h-6 p-1 rounded-full bg-gray-200" src="./assets/images/search.png" />
+                    <img class="w-6 h-6 p-1 rounded-full bg-gray-200" src="./assets/images/message.png" />
+                    <div class="flex flex-row gap-1 mr-10"> 
+                        <div class="flex justify-center">
+                            <img class="w-6 h-6 p-1 rounded-full bg-gray-200" src="./assets/images/warning.png" />
+                        </div>
+                        <p class="ml-1 text-sm font-semibold text-indigo-600">Logout</p>
+                    </div>
+                </div>
+            </div>
+            <!--Top Navbar-->
+
+            <!--Site Banner-->
+            <div class="bg-indigo-200 m-5 p-5">
+                <div class="text-3xl font-semibold"> Good Morning, Super Inc. 👋 </div>
+                <p class="text-xs font-bold mt-5 mb-2"> Here is what's happening with your projects today: </p>
+            </div>
+            <!--Site Banner-->
+
+            <!--Cards 1-->
+            <div class="flex-1">
+                <div class="flex flex-row gap-5">
+                    <div class="w-1/2 bg-white ml-5 mt-5 mb-5 px-5 py-5 shadow-sm">
+                        <img class="w-8" src="./assets/images/wallet.png" />
+                        <p class="font-bold text-sm"> Super Plus </p>
+                        <p class="uppercase text-gray-500 text-xs font-bold my-3 opacity-70"> Sales </p>
+                        <div>
+                            <span class="font-bold text-2xl">$24,780</span>
+                            <span class="bg-green-500 rounded-full px-1 py-0.5 text-xs font-bold text-white"> +49% </span>
+                        </div>
+                        <div>
+                            <canvas id="chart1"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="w-1/2 bg-white mt-5 mb-5 mr-5 px-5 py-5 shadow-sm">
+                        <img class="w-8" src="./assets/images/wallet.png" />
+                        <p class="font-bold text-sm"> Super Pro </p>
+                        <p class="uppercase text-gray-500 text-xs font-bold my-3 opacity-70"> Sales </p>
+                        <div>
+                            <span class="font-bold text-2xl">$24,780</span>
+                            <span class="bg-red-500 rounded-full px-1 py-0.5 text-xs font-bold text-white"> +49% </span>
+                        </div>
+                        <div>
+                            <canvas id="chart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Cards 1-->
+
+            <!--Cards 2-->
+            <div class="flex-1">
+                <div class="flex flex-row gap-5">
+                    <div class="w-1/2 bg-white ml-5 mt-5 mb-5 px-5 py-5 shadow-sm">
+                        <img class="w-8" src="./assets/images/wallet.png" />
+                        <p class="font-bold text-sm"> Super Plus </p>
+                        <p class="uppercase text-gray-500 text-xs font-bold my-3 opacity-70"> Sales </p>
+                        <div>
+                            <span class="font-bold text-2xl">$24,780</span>
+                            <span class="bg-green-500 rounded-full px-1 py-0.5 text-xs font-bold text-white"> +49% </span>
+                        </div>
+                        <div>
+                            <canvas id="chart3"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="w-1/2 bg-white mt-5 mb-5 mr-5 px-5 py-5 shadow-sm">
+                        <img class="w-8" src="./assets/images/wallet.png" />
+                        <p class="font-bold text-sm"> Super Pro </p>
+                        <p class="uppercase text-gray-500 text-xs font-bold my-3 opacity-70"> Sales </p>
+                        <div>
+                            <span class="font-bold text-2xl">$24,780</span>
+                            <span class="bg-red-500 rounded-full px-1 py-0.5 text-xs font-bold text-white"> +49% </span>
+                        </div>
+                        <div>
+                            <canvas id="chart4"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Cards 2-->
+
+            <!--Cards 2-->
+            <div class="flex-1">
+                <div class="flex flex-row gap-5">
+                    <div class="w-1/3 bg-white ml-5 mt-5 mb-5 px-5 py-5 shadow-sm divide-y divide-gray-200">  
+                        <p class="font-bold text-lg mb-4"> Top countries </p>
+                        <div>
+                            <canvas id="chart5" class="pt-4"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="w-2/3 bg-white mt-5 mb-5 mr-5 px-5 py-5 shadow-sm  divide-y divide-gray-200">
+                        <p class="font-bold text-lg mb-4"> Top Channels </p>
+                        <div class="flex"> 
+                            <div class="w-1/3">
+                                <div class="bg-gray-200 p-2 font-bold text-xs">Source</div>
+                            </div>
+                            <div class="w-3/4 flex space-x-14 bg-gray-200 p-2 font-bold text-xs">
+                                <div>Visitors</div>
+                                <div>Revenues</div>
+                                <div>Sales</div>
+                                <div>Conversions</div>
+                            </div>
+                        </div>
+                        <div class="multi-channel flex">
+                            <div class="w-1/3 single-channel flex flex-col divide-y">
+                                <div class="flex flex-row p-2">
+                                    <img class="w-10 h-10 rounded-full" src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg" /> 
+                                    <span class="p-2"> Youtube </span>
+                                </div>
+                                <div class="flex flex-row p-2">
+                                    <img class="w-10 h-10 rounded-full" src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg" /> 
+                                    <span class="p-2"> Youtube </span>
+                                </div>
+                                <div class="flex flex-row p-2">
+                                    <img class="w-10 h-10 rounded-full" src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg" /> 
+                                    <span class="p-2"> Youtube </span>
+                                </div>
+                                <div class="flex flex-row p-2">
+                                    <img class="w-10 h-10 rounded-full" src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg" /> 
+                                    <span class="p-2"> Youtube </span>
+                                </div>
+                                <div class="flex flex-row p-2">
+                                    <img class="w-10 h-10 rounded-full" src="https://img.freepik.com/premium-vector/youtube-background-youtube-icon-social-media-icons-realistic-logo-vector-zaporizhzhia-ukraine-may-10-2021_399089-1047.jpg" /> 
+                                    <span class="p-2"> Youtube </span>
+                                </div>
+                                
+                            </div>
+                            <div class="w-2/3 divide-y flex flex-col">
+                                <div class="flex flex-row space-x-14 p-4"> 
+                                    <p> 2.4K </p>
+                                    <p> $15,000 </p>
+                                    <p> 350 </p>
+                                    <p> 5.8% </p>
+                                </div>
+                                <div class="flex flex-row space-x-14 p-4"> 
+                                    <p> 2.4K </p>
+                                    <p> $15,000 </p>
+                                    <p> 350 </p>
+                                    <p> 5.8% </p>
+                                </div>
+                                <div class="flex flex-row space-x-14 p-4"> 
+                                    <p> 2.4K </p>
+                                    <p> $15,000 </p>
+                                    <p> 350 </p>
+                                    <p> 5.8% </p>
+                                </div>
+                                <div class="flex flex-row space-x-14 p-4"> 
+                                    <p> 2.4K </p>
+                                    <p> $15,000 </p>
+                                    <p> 350 </p>
+                                    <p> 5.8% </p>
+                                </div>
+                                <div class="flex flex-row space-x-14 p-4"> 
+                                    <p> 2.4K </p>
+                                    <p> $15,000 </p>
+                                    <p> 350 </p>
+                                    <p> 5.8% </p>
+                                </div>
+                            </div>
+                        </div>             
+                    </div>
+                </div>
+            </div>
+            <!--Cards 3-->
+        </div>
+        <!--Main area-->
+    </div>
+    <script>
+        const ctx = document.getElementById('chart1');
+        const ctx2 = document.getElementById('chart2');
+        const ctx3 = document.getElementById('chart3');
+        const ctx4 = document.getElementById('chart4');
+        const ctx5 = document.getElementById('chart5');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+            datasets: [{
+              label: '# of Sales',
+              data: [1, 2, 3, 4, 5, 6],
+              borderWidth: 1,
+              backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ]
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+            datasets: [{
+              label: '# of Sales',
+              data: [11, 20, 30, 74, 105, 6],
+              borderWidth: 1,
+              backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ]
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+        
+        new Chart(ctx3, {
+          type: 'doughnut',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+            datasets: [{
+              label: '# of Sales',
+              data: [11, 20, 30, 74, 105, 6],
+              borderWidth: 1,
+              backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ]
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        new Chart(ctx4, {
+          type: 'radar',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+            datasets: [{
+              label: '# of Sales',
+              data: [11, 20, 30, 74, 105, 6],
+      
+              borderWidth: 1,
+              backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ]
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      
+        new Chart(ctx5, {
+          type: 'doughnut',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+            datasets: [{
+              label: '# of Sales',
+              data: [11, 20, 30, 74, 105, 6],
+              options: {
+                    maintainAspectRatio: false,
+                },
+              borderWidth: 1,
+              backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ]
+            }]
+          },
+          options: {
+            scales: {
+
+            }
+          }
+        });
+      </script>
+</body>
+</html>
